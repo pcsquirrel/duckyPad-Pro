@@ -10,7 +10,7 @@
 #include "input_task.h"
 
 #define NEOPIXEL_COUNT MECH_OBSW_COUNT
-#define NEOPIXEL_PIN 46
+#define NEOPIXEL_PIN 21
 
 #define BRIGHTNESS_LEVEL_SIZE 5
 #define ANIMATION_NONE 0

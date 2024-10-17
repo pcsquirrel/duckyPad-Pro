@@ -27,6 +27,7 @@ uint8_t sd_init(void)
     slot_config.clk = SD_PIN_CLK;
     slot_config.cmd = SD_PIN_CMD;
     slot_config.d0 = SD_PIN_D0;
+    
     ESP_LOGI(SD_TAG, "Mounting filesystem");
     ret = esp_vfs_fat_sdmmc_mount(mount_point, &host, &slot_config, &mount_config, &my_sd_card);
     if (ret != ESP_OK) {

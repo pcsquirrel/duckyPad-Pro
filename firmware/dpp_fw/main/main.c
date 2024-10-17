@@ -54,12 +54,15 @@ void app_main(void)
     if(sd_init())
     {
         draw_nosd();
+        ESP_LOGI(TAG, "nosd");
         idle_loop();
+
     }
     
     memset(temp_buf, 0, TEMP_BUFSIZE);
     sprintf(temp_buf, "DP24_%02x%02x", esp_mac_addr[ESP_MAC_ADDR_SIZE-2], esp_mac_addr[ESP_MAC_ADDR_SIZE-1]);
-    f_setlabel(temp_buf);
+    //f_setlabel(temp_buf);
+    ESP_LOGI(TAG, "%s", temp_buf);
 
     led_animation_init();
 
@@ -67,6 +70,7 @@ void app_main(void)
 
     if(should_mount_usb_msc())
     {
+        ESP_LOGI(TAG, "mount");
         mount_usb_msc();
         delete_msc_flag_file();
         neopixel_fill(32,32,32);
@@ -74,6 +78,7 @@ void app_main(void)
         block_until_plus_minus_long_press();
         esp_restart();
     }
+    ESP_LOGI(TAG, "not mount");
 
     is_busy = 1;
     fw_update_check();

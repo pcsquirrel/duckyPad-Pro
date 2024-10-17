@@ -14,9 +14,9 @@
 
 #define SD_MOUNT_POINT "/sdcard"
 
-#define SD_PIN_CLK 8
-#define SD_PIN_CMD 9
-#define SD_PIN_D0 7
+#define SD_PIN_CLK 40
+#define SD_PIN_CMD 14
+#define SD_PIN_D0 39
 
 uint8_t sd_init(void);
 
